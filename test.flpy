@@ -1,0 +1,25 @@
+import os, os.path
+from FL import *
+fl.output = ""
+print "Welcome to FontLab Studio\nVersion %s build %s!" % (fl.version, fl.buildnumber)
+print
+if __file__:
+  print "This script has been originally executed from\n%s\n(You can access this path through the __file__ variable.)" % (__file__)
+else:
+  print "The original location of this script is unknown"
+if __tmpfile__:
+  print "through the temporary file\n%s\n(which is now deleted.)" % (__tmpfile__)
+print
+print "The default FontLab-shared files are located in\n%s" % (fl.commonpath)
+print "The default FontLab Studio-specifc files are located in\n%s" % (fl.path)
+print "Do not modify or add any files or folders within those folder!"
+print
+print "Custom FontLab-shared files should be installed into the appropriate subfolders within\n%s" % (fl.usercommonpath)
+print "Custom FontLab Studio-specific files should be installed into the appropriate subfolders within\n%s" % (fl.userpath)
+print
+print "For example, custom Python macros should be installed into subfolders within\n%s" % (os.path.join(fl.userpath, "Macros"))
+print "Use the code:"
+print "os.makedirs(os.path.join(fl.userpath, 'Macros', 'MySubfolder'))"
+print "to create a subfolder for your own macros."
+print
+print "Finished."
